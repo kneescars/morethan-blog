@@ -1,6 +1,7 @@
-import { getTextContent, getDateValue } from "notion-utils"
-import { NotionAPI } from "notion-client"
 import { BlockMap, CollectionPropertySchemaMap } from "notion-types"
+import { getDateValue, getTextContent } from "notion-utils"
+
+import { NotionAPI } from "notion-client"
 import { customMapImageUrl } from "./customMapImageUrl"
 
 async function getPageProperties(
@@ -31,11 +32,13 @@ async function getPageProperties(
           break
         }
         case "date": {
-          const dateProperty: any = getDateValue(val)
-          delete dateProperty.type
-          properties[schema[key].name] = dateProperty
-          break
-        }
+          const dateProperty: any = getDateValue(val);
+          if (dateProperty && typeof dateProperty === 'object') {
+            delete dateProperty.type;
+            properties[schema[key].name] = dateProperty;
+          }
+          break;
+        }        
         case "select": {
           const selects = getTextContent(val)
           if (selects[0]?.length) {
