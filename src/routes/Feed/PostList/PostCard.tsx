@@ -1,10 +1,10 @@
-import Link from "next/link"
 import { CONFIG } from "site.config"
-import { formatDate } from "src/libs/utils"
-import Tag from "../../../components/Tag"
-import { TPost } from "../../../types"
-import Image from "next/image"
 import Category from "../../../components/Category"
+import Image from "next/image"
+import Link from "next/link"
+import { TPost } from "../../../types"
+import Tag from "../../../components/Tag"
+import { formatDate } from "src/libs/utils"
 import styled from "@emotion/styled"
 
 type Props = {
@@ -19,7 +19,7 @@ const PostCard: React.FC<Props> = ({ data }) => {
       <article>
         {category && (
           <div className="category">
-            <Category>{category}</Category>
+            {/* <Category>{category}</Category> */}
           </div>
         )}
         {data.thumbnail && (
@@ -38,21 +38,21 @@ const PostCard: React.FC<Props> = ({ data }) => {
           </header>
           <div className="date">
             <div className="content">
-              {formatDate(
+              {/* {formatDate(
                 data?.date?.start_date || data.createdTime,
                 CONFIG.lang
-              )}
+              )} */}
             </div>
           </div>
           <div className="summary">
             <p>{data.summary}</p>
           </div>
-          <div className="tags">
+          {/* <div className="tags">
             {data.tags &&
               data.tags.map((tag: string, idx: number) => (
                 <Tag key={idx}>{tag}</Tag>
               ))}
-          </div>
+          </div> */}
         </div>
       </article>
     </StyledWrapper>
