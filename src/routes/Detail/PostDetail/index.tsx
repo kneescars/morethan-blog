@@ -1,10 +1,10 @@
-import React from "react"
-import PostHeader from "./PostHeader"
-import Footer from "./PostFooter"
-import CommentBox from "./CommentBox"
 import Category from "src/components/Category"
-import styled from "@emotion/styled"
+import CommentBox from "./CommentBox"
+import Footer from "./PostFooter"
 import NotionRenderer from "../components/NotionRenderer"
+import PostHeader from "./PostHeader"
+import React from "react"
+import styled from "@emotion/styled"
 import usePostQuery from "src/hooks/usePostQuery"
 
 type Props = {}
@@ -21,9 +21,9 @@ const PostDetail: React.FC<Props> = () => {
       <article>
         {category && (
           <div css={{ marginBottom: "0.5rem" }}>
-            <Category readOnly={data.status?.[0] === "PublicOnDetail"}>
+            {/* <Category readOnly={data.status?.[0] === "PublicOnDetail"}>
               {category}
-            </Category>
+            </Category> */}
           </div>
         )}
         {data.type[0] === "Post" && <PostHeader data={data} />}
