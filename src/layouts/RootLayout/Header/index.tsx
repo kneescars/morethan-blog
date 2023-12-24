@@ -1,5 +1,5 @@
-import NavBar from "./NavBar"
 import Logo from "./Logo"
+import NavBar from "./NavBar"
 import ThemeToggle from "./ThemeToggle"
 import styled from "@emotion/styled"
 import { zIndexes } from "src/styles/zIndexes"
@@ -35,6 +35,8 @@ const StyledWrapper = styled.div`
     display: flex;
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
     justify-content: space-between;
     align-items: center;
     width: 100%;
