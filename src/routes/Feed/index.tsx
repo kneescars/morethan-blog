@@ -1,15 +1,20 @@
-import { useState } from "react"
-
-import SearchInput from "./SearchInput"
+import ContactCard from "./ContactCard"
 import { FeedHeader } from "./FeedHeader"
 import Footer from "./Footer"
-import styled from "@emotion/styled"
-import TagList from "./TagList"
 import MobileProfileCard from "./MobileProfileCard"
-import ProfileCard from "./ProfileCard"
-import ServiceCard from "./ServiceCard"
-import ContactCard from "./ContactCard"
 import PostList from "./PostList"
+import SearchInput from "./SearchInput"
+import ServiceCard from "./ServiceCard"
+import TagList from "./TagList"
+import styled from "@emotion/styled"
+import { useState } from "react"
+
+// import ProfileCard from "./ProfileCard"
+
+
+
+
+
 
 const HEADER_HEIGHT = 73
 
@@ -26,16 +31,17 @@ const Feed: React.FC<Props> = () => {
           height: `calc(100vh - ${HEADER_HEIGHT}px)`,
         }}
       >
-        <TagList />
+        {/* <TagList /> */}
       </div>
       <div className="mid">
         <MobileProfileCard />
-        <SearchInput value={q} onChange={(e) => setQ(e.target.value)} />
+
         <div className="tags">
           <TagList />
         </div>
         <FeedHeader />
         <PostList q={q} />
+        <SearchInput value={q} onChange={(e) => setQ(e.target.value)} />
         <div className="footer">
           <Footer />
         </div>
@@ -46,7 +52,7 @@ const Feed: React.FC<Props> = () => {
           height: `calc(100vh - ${HEADER_HEIGHT}px)`,
         }}
       >
-        <ProfileCard />
+        {/* <ProfileCard /> */}
         <ServiceCard />
         <ContactCard />
         <div className="footer">
