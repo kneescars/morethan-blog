@@ -1,17 +1,20 @@
+import {
+  AiFillLinkedin,
+  AiFillMessage,
+  AiOutlineGithub,
+  AiOutlineInstagram,
+} from "react-icons/ai"
+
 import { CONFIG } from "site.config"
 import React from "react"
-import {
-  AiOutlineInstagram,
-  AiOutlineGithub,
-  AiOutlineMail,
-  AiFillLinkedin,
-} from "react-icons/ai"
+import SearchInput from "./SearchInput"
 import styled from "@emotion/styled"
 
 const ContactCard: React.FC = () => {
   return (
     <>
-      <StyledTitle>💬 Contact</StyledTitle>
+
+      <StyledTitle>Contact</StyledTitle>
       <StyledWrapper>
         {CONFIG.profile.github && (
           <a
@@ -20,7 +23,7 @@ const ContactCard: React.FC = () => {
             target="_blank"
           >
             <AiOutlineGithub className="icon" />
-            <div className="name">github</div>
+            <div className="name">Github</div>
           </a>
         )}
         {CONFIG.profile.instagram && (
@@ -40,8 +43,8 @@ const ContactCard: React.FC = () => {
             target="_blank"
             css={{ overflow: "hidden" }}
           >
-            <AiOutlineMail className="icon" />
-            <div className="name">email</div>
+            <AiFillMessage className="icon" />
+            <div className="name">Telegram</div>
           </a>
         )}
         {CONFIG.profile.linkedin && (
@@ -51,7 +54,7 @@ const ContactCard: React.FC = () => {
             target="_blank"
           >
             <AiFillLinkedin className="icon" />
-            <div className="name">linkedin</div>
+            <div className="name">LinkedIn</div>
           </a>
         )}
       </StyledWrapper>
@@ -64,7 +67,9 @@ export default ContactCard
 const StyledTitle = styled.div`
   padding: 0.25rem;
   margin-bottom: 0.75rem;
-`
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+`;
 const StyledWrapper = styled.div`
   display: flex;
   padding: 0.25rem;
