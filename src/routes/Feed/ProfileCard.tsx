@@ -1,17 +1,17 @@
 import { CONFIG } from "site.config"
+import { Emoji } from "src/components/Emoji"
 import Image from "next/image"
 import React from "react"
 import styled from "@emotion/styled"
-import { Emoji } from "src/components/Emoji"
 
 type Props = {}
 
 const ProfileCard: React.FC<Props> = () => {
   return (
     <StyledWrapper>
-      <div className="title">
-        <Emoji>💻</Emoji> Profile
-      </div>
+<div className="title" style={{ fontFamily: 'Helvetica Neue', fontWeight: 'bold' }}>
+  Profile
+</div>
       <div className="content">
         <div className="top">
           <Image src={CONFIG.profile.image} fill alt="" />
