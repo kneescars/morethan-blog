@@ -1,8 +1,8 @@
-import { useRouter } from "next/router"
-import React from "react"
 import { COLOR_SET } from "./constants"
-import styled from "@emotion/styled"
+import React from "react"
 import { colors } from "src/styles"
+import styled from "@emotion/styled"
+import { useRouter } from "next/router"
 
 export const getColorClassByName = (name: string): string => {
   try {

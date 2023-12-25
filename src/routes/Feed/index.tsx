@@ -34,7 +34,7 @@ const Feed: React.FC<Props> = () => {
         {/* <TagList /> */}
       </div>
       <div className="mid">
-        <MobileProfileCard />
+        {/* <MobileProfileCard /> */}
 
         <div className="tags">
           <TagList />
