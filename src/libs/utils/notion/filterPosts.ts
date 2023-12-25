@@ -1,4 +1,4 @@
-import { TPosts, TPostStatus, TPostType } from "src/types"
+import { TPostStatus, TPostType, TPosts } from "src/types"
 
 export type FilterPostsOptions = {
   acceptStatus?: TPostStatus[]
@@ -28,7 +28,7 @@ export function filterPosts(
     })
     // filter status
     .filter((post) => {
-      const postStatus = post.status[0]
+      const postStatus = (post.status && post.status[0]) || '';
       return acceptStatus.includes(postStatus)
     })
     // filter type
